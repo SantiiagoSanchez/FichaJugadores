@@ -25,17 +25,15 @@ namespace FichaJugadoresBE
             Apellido = aApellido;
             Posicion = aPosicion;
             Dorsal = aDorsal;
-        } 
-        public string Listar()
-        {
-            string Res = "";
-                Res = Nombre + "-" + Apellido + "-" + Posicion + "-" + Dorsal;
-
-            return Res;
         }
 
-        
- 
-  
+
+
+
     }
 }
+
+
+
+
+

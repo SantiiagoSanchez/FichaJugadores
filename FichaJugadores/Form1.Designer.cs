@@ -41,7 +41,12 @@
             this.btMostrar = new System.Windows.Forms.Button();
             this.lblResultado = new System.Windows.Forms.Label();
             this.lblResss = new System.Windows.Forms.Label();
+            this.btSalir = new System.Windows.Forms.Button();
+            this.btNuevoJugador = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -168,11 +173,60 @@
             this.lblResss.Size = new System.Drawing.Size(0, 22);
             this.lblResss.TabIndex = 12;
             // 
+            // btSalir
+            // 
+            this.btSalir.BackColor = System.Drawing.Color.SteelBlue;
+            this.btSalir.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalir.Location = new System.Drawing.Point(15, 399);
+            this.btSalir.Name = "btSalir";
+            this.btSalir.Size = new System.Drawing.Size(117, 39);
+            this.btSalir.TabIndex = 13;
+            this.btSalir.Text = "Salir";
+            this.btSalir.UseVisualStyleBackColor = false;
+            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
+            // 
+            // btNuevoJugador
+            // 
+            this.btNuevoJugador.BackColor = System.Drawing.Color.SteelBlue;
+            this.btNuevoJugador.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNuevoJugador.Location = new System.Drawing.Point(298, 399);
+            this.btNuevoJugador.Name = "btNuevoJugador";
+            this.btNuevoJugador.Size = new System.Drawing.Size(197, 39);
+            this.btNuevoJugador.TabIndex = 14;
+            this.btNuevoJugador.Text = "Nuevo Jugador";
+            this.btNuevoJugador.UseVisualStyleBackColor = false;
+            this.btNuevoJugador.Click += new System.EventHandler(this.btNuevoJugador_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 72);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(776, 321);
+            this.dataGridView1.TabIndex = 15;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btEliminar
+            // 
+            this.btEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btEliminar.Font = new System.Drawing.Font("Arial", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEliminar.Location = new System.Drawing.Point(579, 399);
+            this.btEliminar.Name = "btEliminar";
+            this.btEliminar.Size = new System.Drawing.Size(197, 39);
+            this.btEliminar.TabIndex = 16;
+            this.btEliminar.Text = "Eliminar";
+            this.btEliminar.UseVisualStyleBackColor = false;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 454);
+            this.Controls.Add(this.btEliminar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btNuevoJugador);
+            this.Controls.Add(this.btSalir);
             this.Controls.Add(this.lblResss);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btMostrar);
@@ -189,6 +243,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +264,10 @@
         private System.Windows.Forms.Button btMostrar;
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.Label lblResss;
+        private System.Windows.Forms.Button btSalir;
+        private System.Windows.Forms.Button btNuevoJugador;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btEliminar;
     }
 }
 

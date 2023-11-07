@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,23 +9,47 @@ namespace FichaJugadoresBE
 {
     public class Jugadores
     {
-        public Jugador[] Lista {get; set;} = new Jugador[10];
-        private int fila = 0;
+        public DataTable ListaDT { get; set; } = new DataTable();
 
-    public void Agregar(Jugador aJug)
+       
+   
+
+        public void InsertaJugador(Jugador aJugador) 
         {
-            Lista[fila] = aJug;
-            fila++;
+            ListaDT.Rows.Add();
+            int NuevoRenglon = ListaDT.Rows.Count- 1;
+            ListaDT.Rows[NuevoRenglon]["Nombre"] = aJugador.Nombre;
+            ListaDT.Rows[NuevoRenglon]["Apellido"] = aJugador.Apellido;
+            ListaDT.Rows[NuevoRenglon]["Posicion"] = aJugador.Posicion;
+            ListaDT.Rows[NuevoRenglon]["Dorsal"] = aJugador.Dorsal;
+
+            ListaDT.WriteXml("Jugadores.xml");
+           
+
+
+        }
+        public Jugadores()
+        {
+            ListaDT.TableName = "ListaJugadores";
+            ListaDT.Columns.Add("Nombre");
+            ListaDT.Columns.Add("Apellido");
+            ListaDT.Columns.Add("Posicion");
+            ListaDT.Columns.Add("Dorsal");
+
+            LeeArchivos();
+
         }
 
-        public string Listar()
+        public void LeeArchivos() 
         {
-            string res = "";
-        for (int i = 0; i < fila; i++)
+            if (System.IO.File.Exists("Jugadores.xml"))
             {
-                res = res + Lista[i].Listar() + "\n";
+                ListaDT.ReadXml("Jugadores.xml");
             }
-        return res;
+                
         }
+
+
+       
     }
 }
